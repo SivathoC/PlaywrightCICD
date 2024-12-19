@@ -28,7 +28,6 @@ public class UnitTest1
         var page = await _playwrightDriver.Page;
         await page.GotoAsync(url: "http://eaapp.somee.com");
 
-        await page.Locator("text=Login").WaitForAsync(new LocatorWaitForOptions { Timeout = 60000 });
         await page.GetByRole(AriaRole.Link, new PageGetByRoleOptions { Name = "Login" }).ClickAsync();
 
         await page.GetByLabel("UserName").FillAsync("admin");
